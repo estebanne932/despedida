@@ -340,8 +340,87 @@ body{
 
 /* SOBRE */
 
+.adultos{
+    text-align:center;
+    margin-bottom:35px;
+    padding:18px 22px;
+
+    background:rgba(255,255,255,.4);
+
+    border:1px solid rgba(216,167,184,.25);
+
+    border-radius:18px;
+
+    color:#9b6878;
+
+    font-size:22px;
+
+    line-height:1.5;
+
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.5);
+
+    animation:fadeUp 2.1s ease;
+}
 .sobre{
     animation:shake 4s infinite;
+}
+
+.lugar{
+    display:block;
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+    padding:28px;
+
+    border-radius:24px;
+
+    text-decoration:none;
+
+    background:rgba(255,255,255,.38);
+
+    border:1px solid rgba(216,167,184,.28);
+
+    transition:.35s;
+
+    animation:fadeUp 1.8s ease;
+
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.5);
+}
+
+.lugar:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 28px rgba(0,0,0,.06);
+}
+
+.lugar h2{
+    font-family:'Great Vibes', cursive;
+    font-size:56px;
+    color:#c16284;
+    margin-bottom:8px;
+}
+
+.lugar p{
+    color:#b75c7a;
+    font-size:28px;
+    margin-bottom:14px;
+}
+
+.ver-mapa{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    font-size:20px;
+
+    color:#a7647e;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
 }
 
 @keyframes shake{
@@ -582,10 +661,23 @@ Karime<br>Veleta
 
 </div>
 
-<div class="lugar">
+<a 
+href="https://www.google.com/maps?q=Torreza+Jard%C3%ADn+y+Sal%C3%B3n,+Cusihuiriachi+2747,+Francisco+Villa,+31530+Cuauht%C3%A9moc,+Chih.&ftid=0x86c1cbb0940c2fdb:0x82cc9264d1ad167f&entry=gps&shh=CAE&lucs=,94297699,94231188,94280568,47071704,94218641,94282134,94286869&g_ep=CAISEjI2LjE4LjAuOTA2NTA0NDMzMBgAIIgnKj8sOTQyOTc2OTksOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsOTQyMTg2NDEsOTQyODIxMzQsOTQyODY4NjlCAk1Y&skid=0d8e9f3a-70dc-4d97-9519-ceba166952c5&g_st=iw"
+target="_blank"
+class="lugar"
+>
+
     <h2>Jardín La Torreza</h2>
-    <p>Cuauhtémoc, Chih.</p>
-</div>
+
+    <p>
+        Cuauhtémoc, Chih.
+    </p>
+
+    <span class="ver-mapa">
+        Ver ubicación ✨
+    </span>
+
+</a>
 
 <!-- SOBRE -->
 
@@ -596,7 +688,7 @@ Karime<br>Veleta
     </div>
 
     <div class="sobre-title">
-        Lluvia de Sobres
+        Regalo sugerido
     </div>
 
     <div class="sobre-text">
@@ -605,6 +697,7 @@ Karime<br>Veleta
         agradecemos regalos en efectivo.
     </div>
 
+
 </div>
 
 <div class="form-title">
@@ -612,6 +705,12 @@ Karime<br>Veleta
 </div>
 
 <form action="guardar.php" method="POST">
+
+    
+    <div class="adultos">
+    Para disfrutar plenamente de esta celebración,
+    hemos reservado este evento exclusivamente para adultos.
+</div>
 
     <label>Tu Nombre</label>
 

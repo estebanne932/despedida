@@ -21,22 +21,33 @@ $no = $total_no->fetch_assoc()['total'];
 <title>Panel de Asistentes</title>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&family=Great+Vibes&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-    margin:0;
-    background:#f7f5f2;
-    font-family:Arial, sans-serif;
+    min-height:100vh;
+    background:linear-gradient(135deg,#fdf5f7,#f8eef1);
+    font-family:'Montserrat',sans-serif;
     padding:30px;
 }
 
 .container{
-    max-width:1000px;
+    max-width:1100px;
     margin:auto;
+    animation:aparecer 1s ease;
 }
 
 h1{
-    color:#6d655c;
-    margin-bottom:20px;
+    text-align:center;
+    color:#6d4756;
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    margin-bottom:30px;
 }
 
 .cards{
@@ -47,72 +58,165 @@ h1{
 }
 
 .card{
-    background:white;
-    padding:20px;
-    border-radius:15px;
     flex:1;
-    min-width:200px;
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
+    min-width:220px;
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .card h2{
-    margin:0;
-    font-size:40px;
-    color:#5f5f5f;
+    font-size:52px;
+    color:#b88496;
+    margin-bottom:10px;
+    font-family:'Cormorant Garamond',serif;
 }
 
 .card p{
-    color:#888;
-    margin-top:10px;
+    color:#777;
+    font-size:15px;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
     background:white;
-    border-radius:15px;
+    border-radius:25px;
     overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
 }
 
 th{
-    background:#e9e2d8;
-    color:#5f5f5f;
-    padding:15px;
+    background:#f7e6ec;
+    color:#8c6673;
+    padding:18px;
     text-align:left;
+    font-weight:600;
 }
 
 td{
-    padding:15px;
-    border-bottom:1px solid #eee;
+    padding:18px;
+    border-bottom:1px solid #f2e8eb;
+    color:#555;
+}
+
+tr:last-child td{
+    border-bottom:none;
+}
+
+tr:hover{
+    background:#fff9fb;
 }
 
 .si{
-    color:green;
-    font-weight:bold;
+    color:#8baf74;
+    font-weight:600;
 }
 
 .no{
-    color:#c0392b;
-    font-weight:bold;
+    color:#d37d7d;
+    font-weight:600;
 }
 
-@media(max-width:700px){
+.petalos{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+}
+
+.petalos span{
+    position:absolute;
+    top:-50px;
+    font-size:18px;
+    animation:caer linear infinite;
+}
+
+.petalos span:nth-child(1){
+    left:10%;
+    animation-duration:12s;
+}
+
+.petalos span:nth-child(2){
+    left:25%;
+    animation-duration:16s;
+}
+
+.petalos span:nth-child(3){
+    left:40%;
+    animation-duration:14s;
+}
+
+.petalos span:nth-child(4){
+    left:60%;
+    animation-duration:18s;
+}
+
+.petalos span:nth-child(5){
+    left:75%;
+    animation-duration:13s;
+}
+
+.petalos span:nth-child(6){
+    left:90%;
+    animation-duration:17s;
+}
+
+@keyframes caer{
+    from{
+        transform:translateY(-100px) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
 
     body{
         padding:15px;
+    }
+
+    h1{
+        font-size:36px;
     }
 
     table{
         font-size:14px;
     }
 
-    th, td{
-        padding:10px;
+    th,
+    td{
+        padding:12px;
     }
 
 }
-
 </style>
 
 </head>

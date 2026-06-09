@@ -1,736 +1,520 @@
+<?php
+
+if(isset($_COOKIE['despedida_kenya'])){
+?>
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Despedida de Soltera</title>
+<title>Confirmación registrada</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
 body{
-    margin:0;
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:30px 15px;
-    font-family:'Cormorant Garamond', serif;
-
-    background:
-    repeating-linear-gradient(
-        90deg,
-        #f7efef 0px,
-        #f7efef 45px,
-        #f3dfe3 45px,
-        #f3dfe3 90px
-    );
+    padding:20px;
+    background:linear-gradient(135deg,#fdf5f7,#f8eef1);
+    font-family:'Montserrat',sans-serif;
 }
 
-/* CARD */
-
-.card{
+.mensaje{
     width:100%;
-    max-width:520px;
-    background:rgba(255,255,255,.72);
-    backdrop-filter:blur(4px);
-    border-radius:28px;
-    padding:45px 30px;
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-    border:1px solid rgba(255,255,255,.4);
-}
-
-/* TITULOS */
-
-.top{
-    text-align:center;
-    color:#b75c7a;
-    font-size:68px;
-    line-height:.9;
-    margin-bottom:15px;
-    font-weight:500;
-}
-
-.nombre{
-    text-align:center;
-    font-family:'Great Vibes', cursive;
-    font-size:78px;
-    color:#c16284;
-    line-height:.9;
-    margin-bottom:35px;
-}
-
-/* INFO */
-
-.info{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:35px;
-    gap:15px;
-}
-
-.info-box{
-    width:40%;
-    text-align:center;
-    color:#b75c7a;
-    font-size:24px;
-    font-weight:600;
-    line-height:1.3;
-}
-
-.vestido{
-    font-size:90px;
-    color:#c16284;
-}
-
-/* LUGAR */
-
-.lugar{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.lugar h2{
-    font-family:'Great Vibes', cursive;
-    font-size:52px;
-    color:#c16284;
-    margin:0;
-    line-height:1;
-}
-
-.lugar p{
-    margin-top:5px;
-    color:#b75c7a;
-    font-size:28px;
-}
-
-/* SOBRE */
-
-.sobre-box{
-    background:rgba(255,255,255,.5);
-    border:2px solid #e9c7d1;
-    border-radius:22px;
-    padding:25px;
-    margin-bottom:35px;
-    text-align:center;
-}
-
-.sobre{
-    font-size:60px;
-    margin-bottom:10px;
-}
-
-.sobre-title{
-    color:#b75c7a;
-    font-size:36px;
-    font-weight:700;
-    margin-bottom:10px;
-}
-
-.sobre-text{
-    color:#9b6878;
-    font-size:24px;
-    line-height:1.5;
-}
-
-/* FORM */
-
-.form-title{
-    text-align:center;
-    color:#b75c7a;
-    font-size:42px;
-    font-weight:700;
-    margin-bottom:25px;
-}
-
-label{
-    display:block;
-    color:#a65b74;
-    font-size:24px;
-    margin-bottom:10px;
-}
-
-input{
-    width:100%;
-    padding:16px;
-    border-radius:14px;
-    border:2px solid #ead4db;
+    max-width:500px;
     background:white;
-    font-size:18px;
-    margin-bottom:22px;
-    font-family:inherit;
+    border-radius:25px;
+    padding:50px 35px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+    animation:aparecer 1s ease;
 }
 
-.btn{
-    width:100%;
-    border:none;
-    padding:16px;
-    border-radius:15px;
-    cursor:pointer;
-    font-size:25px;
-    font-family:inherit;
-    transition:.3s;
+.arreglo{
+    width:170px;
+    max-width:70%;
+    margin-bottom:15px;
+    animation:flotar 4s ease-in-out infinite;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:72px;
+    color:#b88496;
+    font-weight:400;
     margin-bottom:15px;
 }
 
-.si{
-    background:#d88ba7;
-    color:white;
+p{
+    color:#666;
+    line-height:1.8;
+    font-size:15px;
 }
 
-.no{
-    background:#f1dbe3;
-    color:#9b6878;
+.nota{
+    margin-top:20px;
+    padding:12px;
+    border-radius:12px;
+    background:#faf4f6;
+    border:1px solid #f0dde4;
+    color:#8c6673;
+    font-size:14px;
 }
 
-.btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 20px rgba(0,0,0,.08);
-}
-
-.footer{
-    text-align:center;
-    color:#b48797;
-    font-size:18px;
-    margin-top:15px;
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-    .top{
-        font-size:52px;
-    }
-
-    .nombre{
-        font-size:64px;
-    }
-
-    .info{
-        flex-direction:column;
-    }
-
-    .info-box{
-        width:100%;
-    }
-
-    .vestido{
-        font-size:70px;
-    }
-
-    .lugar h2{
-        font-size:42px;
-    }
-
-    .lugar p{
-        font-size:22px;
-    }
-
-}
-
-
-
-/* FONDO ANIMADO */
-
-body{
-    animation:fondoMove 12s ease-in-out infinite alternate;
-}
-
-@keyframes fondoMove{
-
-    0%{
-        background-position:left top;
-    }
-
-    100%{
-        background-position:right bottom;
-    }
-
-}
-
-/* CARD */
-
-.card{
-    animation:entradaCard 1.2s ease;
-}
-
-@keyframes entradaCard{
-
-    0%{
+@keyframes aparecer{
+    from{
         opacity:0;
-        transform:translateY(40px) scale(.96);
+        transform:translateY(30px);
     }
-
-    100%{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-
-}
-
-/* TITULO */
-
-.top{
-    animation:fadeTop 1.5s ease;
-}
-
-@keyframes fadeTop{
-
-    0%{
-        opacity:0;
-        transform:translateY(-30px);
-    }
-
-    100%{
+    to{
         opacity:1;
         transform:translateY(0);
     }
-
-}
-
-/* NOMBRE */
-
-.nombre{
-    animation:zoomNombre 1.7s ease;
-}
-
-@keyframes zoomNombre{
-
-    0%{
-        opacity:0;
-        transform:scale(.7);
-    }
-
-    100%{
-        opacity:1;
-        transform:scale(1);
-    }
-
-}
-
-/* VESTIDO */
-
-.vestido{
-    animation:flotar 3s ease-in-out infinite;
 }
 
 @keyframes flotar{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-
-}
-
-/* SOBRE */
-
-.adultos{
-    text-align:center;
-    margin-bottom:35px;
-    padding:18px 22px;
-
-    background:rgba(255,255,255,.4);
-
-    border:1px solid rgba(216,167,184,.25);
-
-    border-radius:18px;
-
-    color:#9b6878;
-
-    font-size:22px;
-
-    line-height:1.5;
-
-    box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.5);
-
-    animation:fadeUp 2.1s ease;
-}
-.sobre{
-    animation:shake 4s infinite;
-}
-
-.lugar{
-    display:block;
-
-    text-align:center;
-
-    margin-bottom:45px;
-
-    padding:28px;
-
-    border-radius:24px;
-
-    text-decoration:none;
-
-    background:rgba(255,255,255,.38);
-
-    border:1px solid rgba(216,167,184,.28);
-
-    transition:.35s;
-
-    animation:fadeUp 1.8s ease;
-
-    box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.5);
-}
-
-.lugar:hover{
-    transform:translateY(-4px);
-    box-shadow:0 14px 28px rgba(0,0,0,.06);
-}
-
-.lugar h2{
-    font-family:'Great Vibes', cursive;
-    font-size:56px;
-    color:#c16284;
-    margin-bottom:8px;
-}
-
-.lugar p{
-    color:#b75c7a;
-    font-size:28px;
-    margin-bottom:14px;
-}
-
-.ver-mapa{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-
-    font-size:20px;
-
-    color:#a7647e;
-
-    font-weight:600;
-
-    letter-spacing:.5px;
-}
-
-@keyframes shake{
-
-    0%{
-        transform:rotate(0deg);
-    }
-
-    10%{
-        transform:rotate(-5deg);
-    }
-
-    20%{
-        transform:rotate(5deg);
-    }
-
-    30%{
-        transform:rotate(-3deg);
-    }
-
-    40%{
-        transform:rotate(3deg);
-    }
-
-    50%{
-        transform:rotate(0deg);
-    }
-
-    100%{
-        transform:rotate(0deg);
-    }
-
-}
-
-/* BOTONES */
-
-.btn{
-    position:relative;
-    overflow:hidden;
-}
-
-.btn::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-120%;
-    width:100%;
-    height:100%;
-    background:rgba(255,255,255,.25);
-    transform:skewX(-25deg);
-    transition:.8s;
-}
-
-.btn:hover::before{
-    left:120%;
-}
-
-.btn:hover{
-    transform:translateY(-3px) scale(1.02);
-}
-
-/* INPUT */
-
-input{
-    transition:.3s;
-}
-
-input:focus{
-    outline:none;
-    border-color:#d88ba7;
-    box-shadow:0 0 15px rgba(216,139,167,.25);
-    transform:scale(1.01);
-}
-
-/* SOBRE BOX */
-
-.sobre-box{
-    transition:.4s;
-}
-
-.sobre-box:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 25px rgba(0,0,0,.06);
-}
-
-/* TEXTOS */
-
-.form-title,
-.lugar,
-.info-box{
-    animation:fadeUp 1.6s ease;
-}
-
-@keyframes fadeUp{
-
-    0%{
-        opacity:0;
-        transform:translateY(25px);
-    }
-
-    100%{
-        opacity:1;
+    0%,100%{
         transform:translateY(0);
     }
-
-}
-
-/* EFECTO BRILLO CARD */
-
-.card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:28px;
-    padding:1px;
-    background:linear-gradient(
-        135deg,
-        rgba(255,255,255,.6),
-        rgba(255,255,255,0),
-        rgba(255,255,255,.5)
-    );
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite:xor;
-    mask-composite:exclude;
-
-    pointer-events:none;
-
-    animation:shine 6s linear infinite;
-}
-
-@keyframes shine{
-
-    0%{
-        opacity:.3;
-    }
-
     50%{
-        opacity:1;
+        transform:translateY(-8px);
     }
-
-    100%{
-        opacity:.3;
-    }
-
-}
-
-/* PARTICULAS */
-
-.particula{
-    position:fixed;
-    font-size:20px;
-    animation:caer linear infinite;
-    pointer-events:none;
-    opacity:.6;
-}
-
-.p1{
-    left:10%;
-    animation-duration:12s;
-}
-
-.p2{
-    left:30%;
-    animation-duration:16s;
-}
-
-.p3{
-    left:50%;
-    animation-duration:14s;
-}
-
-.p4{
-    left:70%;
-    animation-duration:18s;
-}
-
-.p5{
-    left:90%;
-    animation-duration:13s;
-}
-
-@keyframes caer{
-
-    0%{
-        transform:translateY(-120px) rotate(0deg);
-    }
-
-    100%{
-        transform:translateY(120vh) rotate(360deg);
-    }
-
 }
 
 </style>
 
-<!-- PARTICULAS -->
-
-<div class="particula p1">🌸</div>
-<div class="particula p2">💖</div>
-<div class="particula p3">✨</div>
-<div class="particula p4">🌷</div>
-<div class="particula p5">💐</div>
-
-
-
 </head>
+
 <body>
 
-<div class="card">
+<div class="mensaje">
 
-<div class="top">
-Bride To Be!
-</div>
+    <img src="arreglo.png" alt="Flores" class="arreglo">
 
-<div class="nombre">
-Karime<br>Veleta
-</div>
-
-<div class="info">
-
-    <div class="info-box">
-        DOMINGO<br>
-        24 DE MAYO<br>
-        2026
-    </div>
-
-    <div class="vestido">
-        👗
-    </div>
-
-    <div class="info-box">
-        9:30 A.M.
-    </div>
-
-</div>
-
-<a 
-href="https://www.google.com/maps?q=Torreza+Jard%C3%ADn+y+Sal%C3%B3n,+Cusihuiriachi+2747,+Francisco+Villa,+31530+Cuauht%C3%A9moc,+Chih.&ftid=0x86c1cbb0940c2fdb:0x82cc9264d1ad167f&entry=gps&shh=CAE&lucs=,94297699,94231188,94280568,47071704,94218641,94282134,94286869&g_ep=CAISEjI2LjE4LjAuOTA2NTA0NDMzMBgAIIgnKj8sOTQyOTc2OTksOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsOTQyMTg2NDEsOTQyODIxMzQsOTQyODY4NjlCAk1Y&skid=0d8e9f3a-70dc-4d97-9519-ceba166952c5&g_st=iw"
-target="_blank"
-class="lugar"
->
-
-    <h2>Jardín La Torreza</h2>
+    <h1>Ya respondiste</h1>
 
     <p>
-        Cuauhtémoc, Chih.
+        Tu confirmación ya fue registrada anteriormente.
+        Muchas gracias por tomarte el tiempo de responder. 💐
     </p>
 
-    <span class="ver-mapa">
-        Ver ubicación ✨
-    </span>
-
-</a>
-
-<!-- SOBRE -->
-
-<div class="sobre-box">
-
-    <div class="sobre">
-        ✉️
+    <div class="nota">
+        Nos dará mucho gusto compartir este momento tan especial contigo.
     </div>
-
-    <div class="sobre-title">
-        Regalo sugerido
-    </div>
-
-    <div class="sobre-text">
-        Tu presencia es lo más importante 💖<br>
-        Pero si deseas tener un detalle,<br>
-        agradecemos regalos en efectivo.
-    </div>
-
-
-</div>
-
-<div class="form-title">
-    Confirmar Asistencia
-</div>
-
-<form action="guardar.php" method="POST">
-
-    
-    <div class="adultos">
-    Para disfrutar plenamente de esta celebración,
-    hemos reservado este evento exclusivamente para adultos.
-</div>
-
-    <label>Tu Nombre</label>
-
-    <input type="text" name="nombre" required>
-
-    <button type="submit" name="asistencia" value="si" class="btn si">
-        Sí asistiré
-    </button>
-
-    <button type="submit" name="asistencia" value="no" class="btn no">
-        No podré asistir
-    </button>
-
-</form>
-
-<div class="footer">
-Esperamos celebrar contigo ✨
-</div>
 
 </div>
 
 </body>
 </html>
+
+<?php
+exit;
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despedida de Soltera</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #fdf5f7, #f8eef1);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .invitacion {
+            width: 100%;
+            max-width: 500px;
+            background: #fff;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .12);
+            position: relative;
+        }
+
+        .flores-top,
+        .flores-bottom {
+            height: 90px;
+            background: linear-gradient(
+                135deg,
+                #f8d7df,
+                #f4c9d6,
+                #f8d7df
+            );
+        }
+
+        .contenido {
+            padding: 45px 35px;
+            text-align: center;
+        }
+
+        .subtitulo {
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: #c58ca0;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            color: #6d4756;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .mensaje {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        .detalle {
+            background: #faf4f6;
+            border-radius: 18px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .detalle p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .novia-section{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.arreglo{
+    width:180px;
+    max-width:70%;
+    margin-bottom:10px;
+}
+
+.nombre-novia{
+    font-family:'Great Vibes', cursive;
+    font-size:72px;
+    color:#b88496;
+    font-weight:400;
+    margin-bottom:15px;
+}
+   
+
+.mensaje{
+    color:#666;
+    line-height:1.7;
+    font-size:15px;
+    max-width:320px;
+    margin:0 auto;
+}
+
+        input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #e5d2d9;
+            border-radius: 12px;
+            outline: none;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"]:focus {
+            border-color: #d39ab0;
+        }
+
+        .botones {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            flex: 1;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .si {
+            background: #d7a3b5;
+            color: white;
+        }
+
+        .si:hover {
+            background: #c98ca1;
+            transform: translateY(-2px);
+        }
+
+        .no {
+            background: #f2f2f2;
+            color: #555;
+        }
+
+        .no:hover {
+            background: #e7e7e7;
+            transform: translateY(-2px);
+        }
+
+        .footer{
+    margin-top:25px;
+    text-align:center;
+}
+
+.confirmacion{
+    font-size:13px;
+    color:#999;
+    margin-bottom:15px;
+}
+
+.regalo{
+    background:#faf4f6;
+    border:1px solid #f0dde4;
+    border-radius:12px;
+    padding:12px;
+    color:#8c6673;
+    font-weight:500;
+    font-size:15px;
+}
+
+.regalo span{
+    display:block;
+    margin-top:5px;
+    font-size:13px;
+    font-weight:400;
+    color:#777;
+}
+
+/* Entrada de la tarjeta */
+.invitacion{
+    animation: aparecer 1.2s ease forwards;
+}
+
+/* Título */
+h1{
+    animation: subir 1s ease .3s both;
+}
+
+/* Nombre de la novia */
+.nombre-novia{
+    animation: aparecerNombre 1.5s ease .8s both;
+}
+
+/* Flores */
+.arreglo{
+    animation: flotar 4s ease-in-out infinite;
+}
+
+/* Datos del evento */
+.detalle{
+    animation: subir 1s ease 1s both;
+}
+
+/* Formulario */
+form{
+    animation: subir 1s ease 1.2s both;
+}
+
+/* Regalo */
+.regalo{
+    animation: pulseSuave 3s infinite;
+}
+
+/* Botones */
+.btn{
+    transition: all .3s ease;
+}
+
+.btn:hover{
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* Animaciones */
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes subir{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes aparecerNombre{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes flotar{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@keyframes pulseSuave{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.02);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="invitacion">
+
+        <div class="flores-top"></div>
+
+        <div class="contenido">
+
+            <div class="subtitulo">
+                Estás invitado
+            </div>
+
+            <h1>Despedida de Soltera</h1>
+
+           <div class="novia-section">
+
+                <img src="arreglo.png" alt="Arreglo floral" class="arreglo">
+
+                <h2 class="nombre-novia">Kenya Isela</h2>
+
+                <p class="mensaje">
+                    Acompáñanos a celebrar este momento tan especial
+                    antes del gran día. Tu presencia hará que esta
+                    reunión sea aún más memorable.
+                </p>
+
+            </div>
+
+            <div class="detalle">
+                
+                <p><strong>Fecha:</strong> Domingo 5 de Julio 2026</p>
+                <p><strong>Hora:</strong> 9:00 AM</p>
+                <p><strong>Lugar:</strong> Salón del sindicato de maestros </p>
+                 <p>Av. Galeanta entre tercera y quinta</p>
+
+            </div>
+
+            <form action="guardar.php" method="POST">
+
+                <input
+                    type="text"
+                    name="nombre"
+                    placeholder="Escribe tu nombre"
+                    required>
+
+                <div class="botones">
+
+                    <button
+                        type="submit"
+                        name="asistencia"
+                        value="si"
+                        class="btn si">
+                        Sí asistiré
+                    </button>
+
+                    <button
+                        type="submit"
+                        name="asistencia"
+                        value="no"
+                        class="btn no">
+                        No podré asistir
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div class="footer">
+
+                <p class="confirmacion">
+                    Favor de confirmar tu asistencia
+                </p>
+
+                <div class="regalo">
+                    🎁 Lluvia de sobres
+                    <span>Tu regalo en efectivo será muy apreciado.</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="flores-bottom"></div>
+
+    </div>
+
+</body>
+
+</html>
+

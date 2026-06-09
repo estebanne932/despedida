@@ -15,6 +15,13 @@ $stmt->bind_param("ss", $nombre, $asistencia);
 
 $stmt->execute();
 
+setcookie(
+    'despedida_kenya',
+    'respondio',
+    time() + (60 * 60 * 24 * 30),
+    '/'
+);
+
 ?>
 
 <!DOCTYPE html>
@@ -24,26 +31,73 @@ $stmt->execute();
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&family=Great+Vibes&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-    background:#f7f5f2;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:100vh;
-    font-family:Georgia;
+    padding:20px;
+    background:linear-gradient(135deg,#fdf5f7,#f8eef1);
+    font-family:'Montserrat',sans-serif;
 }
 
 .mensaje{
-    background:#f3efe8;
-    padding:40px;
-    border-radius:20px;
+    max-width:500px;
+    width:100%;
+    background:#fff;
+    padding:50px 35px;
+    border-radius:25px;
     text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+    animation:aparecer 1s ease;
+}
+
+.flor{
+    width:150px;
+    margin-bottom:15px;
+    animation:flotar 4s ease-in-out infinite;
 }
 
 h1{
-    color:#6d655c;
+    font-family:'Great Vibes',cursive;
+    font-size:68px;
+    color:#b88496;
+    font-weight:400;
+    margin-bottom:15px;
+}
+
+p{
+    color:#666;
+    font-size:16px;
+    line-height:1.7;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes flotar{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
 }
 
 </style>
@@ -53,9 +107,14 @@ h1{
 
 <div class="mensaje">
 
-<h1>¡Gracias por responder! 💐</h1>
+    <img src="arreglo.png" class="flor">
 
-<p>Tu respuesta ha sido registrada.</p>
+    <h1>¡Gracias!</h1>
+
+    <p>
+        Tu respuesta ha sido registrada correctamente.
+        Nos dará mucho gusto compartir este momento contigo. 
+    </p>
 
 </div>
 

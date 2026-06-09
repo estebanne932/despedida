@@ -116,6 +116,8 @@ p{
         Nos dará mucho gusto compartir este momento contigo. 
     </p>
 
+    <a href="index.php">Volver a la invitacion</a>
+
 </div>
 
 </body>

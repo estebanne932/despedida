@@ -1,128 +1,7 @@
 <?php
 
-if(isset($_COOKIE['despedida_kenya'])){
-?>
+$yaRespondio = isset($_COOKIE['despedida_kenya']);
 
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Confirmación registrada</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-    background:linear-gradient(135deg,#fdf5f7,#f8eef1);
-    font-family:'Montserrat',sans-serif;
-}
-
-.mensaje{
-    width:100%;
-    max-width:500px;
-    background:white;
-    border-radius:25px;
-    padding:50px 35px;
-    text-align:center;
-    box-shadow:0 20px 50px rgba(0,0,0,.08);
-    animation:aparecer 1s ease;
-}
-
-.arreglo{
-    width:170px;
-    max-width:70%;
-    margin-bottom:15px;
-    animation:flotar 4s ease-in-out infinite;
-}
-
-h1{
-    font-family:'Great Vibes',cursive;
-    font-size:72px;
-    color:#b88496;
-    font-weight:400;
-    margin-bottom:15px;
-}
-
-p{
-    color:#666;
-    line-height:1.8;
-    font-size:15px;
-}
-
-.nota{
-    margin-top:20px;
-    padding:12px;
-    border-radius:12px;
-    background:#faf4f6;
-    border:1px solid #f0dde4;
-    color:#8c6673;
-    font-size:14px;
-}
-
-@keyframes aparecer{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes flotar{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-8px);
-    }
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="mensaje">
-
-    <img src="arreglo.png" alt="Flores" class="arreglo">
-
-    <h1>Ya respondiste</h1>
-
-    <p>
-        Tu confirmación ya fue registrada anteriormente.
-        Muchas gracias por tomarte el tiempo de responder. 💐
-    </p>
-
-    <div class="nota">
-        Nos dará mucho gusto compartir este momento tan especial contigo.
-    </div>
-
-</div>
-
-</body>
-</html>
-
-<?php
-exit;
-}
 ?>
 
 
@@ -367,6 +246,27 @@ form{
     transform: translateY(-4px) scale(1.03);
 }
 
+.respuesta-registrada{
+    background:#faf4f6;
+    border:1px solid #f0dde4;
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+    animation:subir 1s ease;
+}
+
+.respuesta-registrada h3{
+    color:#b88496;
+    margin-bottom:8px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:28px;
+}
+
+.respuesta-registrada p{
+    color:#666;
+    margin:0;
+}
+
 /* Animaciones */
 
 @keyframes aparecer{
@@ -465,36 +365,51 @@ form{
 
             </div>
 
-            <form action="guardar.php" method="POST">
+           <?php if(!$yaRespondio): ?>
 
-                <input
-                    type="text"
-                    name="nombre"
-                    placeholder="Escribe tu nombre"
-                    required>
+<form action="guardar.php" method="POST">
 
-                <div class="botones">
+    <input
+        type="text"
+        name="nombre"
+        placeholder="Escribe tu nombre"
+        required>
 
-                    <button
-                        type="submit"
-                        name="asistencia"
-                        value="si"
-                        class="btn si">
-                        Sí asistiré
-                    </button>
+    <div class="botones">
 
-                    <button
-                        type="submit"
-                        name="asistencia"
-                        value="no"
-                        class="btn no">
-                        No podré asistir
-                    </button>
+        <button
+            type="submit"
+            name="asistencia"
+            value="si"
+            class="btn si">
+            Sí asistiré
+        </button>
 
-                </div>
+        <button
+            type="submit"
+            name="asistencia"
+            value="no"
+            class="btn no">
+            No podré asistir
+        </button>
 
-            </form>
+    </div>
 
+</form>
+
+<?php else: ?>
+
+<div class="respuesta-registrada">
+
+    <h3>💐 Confirmación registrada</h3>
+
+    <p>
+        Tu respuesta ya fue recibida anteriormente.
+    </p>
+
+</div>
+
+<?php endif; ?>
             <div class="footer">
 
                 <p class="confirmacion">

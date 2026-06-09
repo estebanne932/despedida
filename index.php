@@ -207,6 +207,48 @@ $yaRespondio = isset($_COOKIE['despedida_kenya']);
     animation: aparecer 1.2s ease forwards;
 }
 
+.avisos{
+    display:flex;
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.aviso{
+    flex:1;
+    background:#faf4f6;
+    border:1px solid #f0dde4;
+    border-radius:16px;
+    padding:16px 12px;
+    text-align:center;
+    color:#8c6673;
+    font-size:14px;
+    font-weight:500;
+    box-shadow:0 4px 12px rgba(184,132,150,.08);
+    transition:.3s;
+    animation:subir 1s ease both;
+}
+
+.icono-aviso{
+    font-size:28px;
+    margin-bottom:8px;
+}
+.aviso:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(184,132,150,.15);
+}
+
+.aviso::first-line{
+    font-size:18px;
+}
+
+@media(max-width:500px){
+
+    .avisos{
+        flex-direction:column;
+    }
+
+}
+
 /* Título */
 h1{
     animation: subir 1s ease .3s both;
@@ -421,6 +463,20 @@ form{
                     <span>Tu regalo en efectivo será muy apreciado.</span>
                 </div>
 
+            </div>
+
+        </div>
+
+        <div class="avisos">
+
+            <div class="aviso">
+                <div class="icono-aviso">♀</div>
+                <span>Solo para damas</span>
+            </div>
+
+            <div class="aviso">
+                <div class="icono-aviso">🚫👶</div>
+                <span>Sin niños, por favor</span>
             </div>
 
         </div>

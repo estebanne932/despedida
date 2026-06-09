@@ -207,48 +207,45 @@ $yaRespondio = isset($_COOKIE['despedida_kenya']);
     animation: aparecer 1.2s ease forwards;
 }
 
-.avisos{
-    display:flex;
-    gap:12px;
-    margin-bottom:25px;
-}
-
-.aviso{
-    flex:1;
-    background:#faf4f6;
-    border:1px solid #f0dde4;
-    border-radius:16px;
-    padding:16px 12px;
+.restricciones{
+    margin:25px 0;
     text-align:center;
-    color:#8c6673;
-    font-size:14px;
-    font-weight:500;
-    box-shadow:0 4px 12px rgba(184,132,150,.08);
-    transition:.3s;
-    animation:subir 1s ease both;
 }
 
-.icono-aviso{
-    font-size:28px;
-    margin-bottom:8px;
-}
-.aviso:hover{
-    transform:translateY(-3px);
-    box-shadow:0 8px 20px rgba(184,132,150,.15);
+.restriccion{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    color:#b88496;
+    font-family:'Cormorant Garamond', serif;
+    font-size:22px;
+    line-height:1.3;
 }
 
-.aviso::first-line{
-    font-size:18px;
+.icono{
+    font-size:24px;
+    opacity:.8;
+}
+
+.separador{
+    width:120px;
+    height:1px;
+    background:#e8cfd7;
+    margin:12px auto;
 }
 
 @media(max-width:500px){
 
-    .avisos{
-        flex-direction:column;
+    .restriccion{
+        font-size:18px;
+    }
+
+    .icono{
+        font-size:20px;
     }
 
 }
-
 /* Título */
 h1{
     animation: subir 1s ease .3s both;
@@ -459,27 +456,33 @@ form{
                 </p>
 
                 <div class="regalo">
-                    🎁 Lluvia de sobres
-                    <span>Tu regalo en efectivo será muy apreciado.</span>
-                </div>
+    💌 Lluvia de sobres
+
+    <span>
+        Si deseas obsequiarme algo, un sobre con efectivo será un hermoso detalle
+        para ayudarme a construir los sueños que comienzan en esta nueva etapa. 💕
+    </span>
+</div>
 
             </div>
 
         </div>
 
-        <div class="avisos">
+        <div class="restricciones">
 
-            <div class="aviso">
-                <div class="icono-aviso">♀</div>
-                <span>Solo para damas</span>
-            </div>
+    <div class="restriccion">
+        <span class="icono">♀</span>
+        <span>Solo para damas</span>
+    </div>
 
-            <div class="aviso">
-                <div class="icono-aviso">🚫👶</div>
-                <span>Sin niños, por favor</span>
-            </div>
+    <div class="separador"></div>
 
-        </div>
+    <div class="restriccion">
+        <span class="icono">🚫👶</span>
+        <span>Celebración exclusiva para adultos</span>
+    </div>
+
+</div>
 
         <div class="flores-bottom"></div>
 

@@ -11,9 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Parisienne&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg-deep: #122620;
-    --bg-panel: #16302A;
-    --bg-panel-2: #1B3830;
+    --bg-deep: #ffffff;
+    --bg-panel: #ffffff;
+    --bg-panel-2: #ffffff;
     --gold: #C9A662;
     --gold-soft: #A98B52;
     --gold-bright: #E4C989;
@@ -529,11 +529,23 @@
 <!-- ============ STORY ============ -->
 <section id="story">
   <div class="reveal">
-    <p class="eyebrow">Nuestra historia</p>
+    <p class="eyebrow">ACOMPAÑANOS A CELEBRAR ESTA GRAN HISTORIA DE AMOR</p>
     <h2>Un capítulo que empezó&nbsp;hace&nbsp;tiempo</h2>
     <div class="divider-h"></div>
-    <p>Nos conocimos por casualidad y, sin darnos cuenta, esa casualidad se convirtió en costumbre, y la costumbre en amor. Hoy, después de tantos días compartidos, queremos dar el siguiente paso rodeados de las personas que más queremos: ustedes.</p>
+    <p>CON LA BENDICION DE DIOS Y DE NUESTROS PADRES, HEMOS DECIDIDO UNIR NUESTRAS VIDAS EN MATRIMONIO.</p>
+    <br>
+    <p>PADRES DE LA NOVIA:<br>
+      ROSA ISELA SAENZ SERRANO
+      JESUS ARMANDO QUEZADA DOZAL</p>  
+    <br>
+    <p>PADRES DEL NOVIO:<br>
+      MARIA ELENA CHAVEZ CONTRERAS
+      JOSE LEON MURIILO ERIVES</p>
   </div>
+
+  <br>
+
+  
 </section>
 
 <!-- ============ DETAILS ============ -->
@@ -548,18 +560,21 @@
       <div class="event-card">
         <div class="icon">&#10022;</div>
         <h3>Ceremonia</h3>
-        <div class="time">17:00 HRS</div>
-        <p>Parroquia San José</p>
-        <p>Av. de las Palomas 245, Chihuahua</p>
-        <a href="https://maps.google.com/?q=Parroquia+San+Jose+Chihuahua" target="_blank" rel="noopener">Ver mapa</a>
+        <div class="time">3:30PM</div>
+        <p>Catedral de Cuauhtémoc</p>
+        <p>San Antonio de Pauda</p>
+        <p>Miguel Hidalgo, Zona centro</p>
+        <p>31500</p>
+        <a href="https://maps.app.goo.gl/Vkwoxqii1LshtjKx5" target="_blank" rel="noopener">Ver mapa</a>
       </div>
       <div class="event-card">
         <div class="icon">&#10022;</div>
         <h3>Recepción</h3>
-        <div class="time">19:30 HRS</div>
-        <p>Jardín Los Encinos</p>
-        <p>Camino Real 88, Chihuahua</p>
-        <a href="https://maps.google.com/?q=Jardin+Los+Encinos+Chihuahua" target="_blank" rel="noopener">Ver mapa</a>
+        <div class="time">08:30PM</div>
+        <p>SALON DEL CAMINO</p>
+        <p>Av. Tecnologico</p>
+        <p>Te esperamos para brindar juntos</p>
+        <a href="https://maps.app.goo.gl/xcb159zTg29jYucF8" target="_blank" rel="noopener">Ver mapa</a>
       </div>
     </div>
   </div>
@@ -585,16 +600,10 @@
 <section id="dresscode">
   <div class="reveal">
     <p class="eyebrow">Código de vestimenta</p>
-    <h2>Formal / Etiqueta rigurosa</h2>
+    <h2>Formal</h2>
     <div class="divider-h"></div>
-    <p style="color:var(--cream-dim); max-width:420px;">Pedimos amablemente evitar el color verde esmeralda y dorado, reservados para la novia y la decoración.</p>
-    <div class="palette">
-      <div class="swatch" style="background:#12261F"></div>
-      <div class="swatch" style="background:#2E4A3F"></div>
-      <div class="swatch" style="background:#C9A662"></div>
-      <div class="swatch" style="background:#F3ECDD"></div>
-      <div class="swatch" style="background:#5B3A29"></div>
-    </div>
+    <p style="color:var(--cream-dim); max-width:420px;">Color reservado: fucsia.</p>
+    
   </div>
 </section>
 
@@ -605,7 +614,7 @@
   <div class="reveal" style="display:flex; flex-direction:column; align-items:center; width:100%;">
     <p class="eyebrow">Confirmación</p>
     <h2>¿Nos acompañas?</h2>
-    <p>Por favor confirma tu asistencia antes del 1 de octubre de 2026.</p>
+    <p>Por favor confirma tu asistencia antes del 1 de agosto de 2026.</p>
     <form id="rsvpForm">
       <input type="text" placeholder="Nombre completo" required>
       <select required>

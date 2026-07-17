@@ -116,6 +116,55 @@
     transform: translateY(0);
   }
 
+  /* ---- Galery ----*/
+.gallery-grid{
+    width:100%;
+    max-width:1100px;
+    margin-top:40px;
+    display:grid;
+    gap:18px;
+    grid-template-columns:repeat(3,1fr);
+}
+
+.gallery-grid img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    border-radius:22px;
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+    transition:.35s ease;
+    display:block;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.03);
+}
+
+/* Featured image (Desktop only) */
+.gallery-grid img:first-child{
+    grid-column:span 2;
+    grid-row:span 2;
+    height:700px;
+}
+
+
+@media (max-width: 992px){
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery-grid img{
+        height:260px;
+    }
+
+    .gallery-grid img:first-child{
+        grid-column:span 2;
+        grid-row:auto;
+        height:400px;
+    }
+
+}
   /* ---- Cover (full-bleed photo) ---- */
 #cover{
     position:relative;
@@ -535,11 +584,11 @@
     <p>CON LA BENDICION DE DIOS Y DE NUESTROS PADRES, HEMOS DECIDIDO UNIR NUESTRAS VIDAS EN MATRIMONIO.</p>
     <br>
     <p>PADRES DE LA NOVIA:<br>
-      ROSA ISELA SAENZ SERRANO
+      ROSA ISELA SAENZ SERRANO<br>
       JESUS ARMANDO QUEZADA DOZAL</p>  
     <br>
     <p>PADRES DEL NOVIO:<br>
-      MARIA ELENA CHAVEZ CONTRERAS
+      MARIA ELENA CHAVEZ CONTRERAS<br>
       JOSE LEON MURIILO ERIVES</p>
   </div>
 
@@ -581,17 +630,18 @@
 </section>
 
 <!-- ============ ITINERARY ============ -->
-<section id="itinerary">
+<section id="gallery">
   <div class="reveal" style="display:flex; flex-direction:column; align-items:center;">
-    <p class="eyebrow">Orden del día</p>
-    <h2>Itinerario</h2>
-    <div class="timeline">
-      <div class="t-item"><div class="t-time">17:00</div><div class="t-label">Ceremonia religiosa</div></div>
-      <div class="t-item"><div class="t-time">18:30</div><div class="t-label">Sesión de fotos y cóctel</div></div>
-      <div class="t-item"><div class="t-time">19:30</div><div class="t-label">Recepción y cena</div></div>
-      <div class="t-item"><div class="t-time">21:00</div><div class="t-label">Primer baile</div></div>
-      <div class="t-item"><div class="t-time">22:00</div><div class="t-label">Fiesta</div></div>
-      <div class="t-item"><div class="t-time">02:00</div><div class="t-label">Fin de la celebración</div></div>
+    <p class="eyebrow">Nuestros momentos</p>
+    <h2>Galería</h2>
+
+    <div class="gallery-grid">
+      <img src="images/gallery1.jpeg" alt="Foto 1">
+      <img src="images/gallery2.jpeg" alt="Foto 2">
+      <img src="images/gallery3.jpeg" alt="Foto 3">
+      <img src="images/gallery4.jpeg" alt="Foto 4">
+      <img src="images/gallery5.jpeg" alt="Foto 5">
+      <img src="images/gallery6.jpeg" alt="Foto 6">
     </div>
   </div>
 </section>
@@ -614,7 +664,7 @@
   <div class="reveal" style="display:flex; flex-direction:column; align-items:center; width:100%;">
     <p class="eyebrow">Confirmación</p>
     <h2>¿Nos acompañas?</h2>
-    <p>Por favor confirma tu asistencia antes del 1 de agosto de 2026.</p>
+    <p>Esperamos tu confirmación de asistencia.</p>
     <form id="rsvpForm">
       <input type="text" placeholder="Nombre completo" required>
       <select required>

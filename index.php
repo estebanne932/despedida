@@ -630,7 +630,7 @@
     <br>
     <p>PADRES DEL NOVIO:<br>
       MARIA ELENA CHAVEZ CONTRERAS<br>
-      JOSE LEON MURIILO ERIVES</p>
+      JOSE LEON MURILLO ERIVES</p>
   </div>
 
   <br>

@@ -652,7 +652,7 @@
         <h3>Ceremonia</h3>
         <div class="time">3:30PM</div>
         <p>Catedral de Cuauhtémoc</p>
-        <p>San Antonio de Pauda</p>
+        <p>San Antonio de Padua</p>
         <p>Miguel Hidalgo, Zona centro</p>
         <p>31500</p>
         <a href="https://maps.app.goo.gl/Vkwoxqii1LshtjKx5" target="_blank" rel="noopener">Ver mapa</a>

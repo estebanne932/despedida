@@ -165,6 +165,47 @@
     }
 
 }
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:640px){
+
+    .gallery-grid{
+
+        display:block;
+
+        column-count:2;
+        column-gap:14px;
+
+    }
+
+    .gallery-grid img{
+
+        width:100%;
+        height:auto;
+
+        margin-bottom:14px;
+
+        border-radius:18px;
+
+        break-inside:avoid;
+
+        display:block;
+
+    }
+
+    /* Remove the desktop featured image */
+
+    .gallery-grid img:first-child{
+
+        width:100%;
+
+        height:auto;
+
+    }
+
+}
   /* ---- Cover (full-bleed photo) ---- */
 #cover{
     position:relative;
@@ -657,26 +698,58 @@
   </div>
 </section>
 
-<!-- ============ RSVP ============ -->
+  <!-- ============ RSVP ============ -->
 <section id="rsvp" class="frame">
-  <div class="corner tl"><svg viewBox="0 0 100 100" fill="none" stroke="#C9A662" stroke-width="1.2"><path d="M4 4 C 30 4, 40 4, 40 30 C 40 45, 55 50, 70 46" /><path d="M4 4 C 4 30, 4 40, 30 40 C 45 40, 50 55, 46 70" /></svg></div>
-  <div class="corner br"><svg viewBox="0 0 100 100" fill="none" stroke="#C9A662" stroke-width="1.2"><path d="M4 4 C 30 4, 40 4, 40 30 C 40 45, 55 50, 70 46" /><path d="M4 4 C 4 30, 4 40, 30 40 C 45 40, 50 55, 46 70" /></svg></div>
+
+  <div class="corner tl">
+    <!-- SVG -->
+  </div>
+
+  <div class="corner br">
+    <!-- SVG -->
+  </div>
+
   <div class="reveal" style="display:flex; flex-direction:column; align-items:center; width:100%;">
+
     <p class="eyebrow">Confirmación</p>
     <h2>¿Nos acompañas?</h2>
+
     <p>Esperamos tu confirmación de asistencia.</p>
-    <form id="rsvpForm">
-      <input type="text" placeholder="Nombre completo" required>
-      <select required>
-        <option value="" disabled selected>¿Asistirás?</option>
-        <option value="si">Sí, ahí estaré</option>
-        <option value="no">No podré asistir</option>
-      </select>
-      <input type="number" min="0" max="10" placeholder="Número de acompañantes">
-      <button type="submit">Confirmar asistencia</button>
-    </form>
-    <p id="rsvp-msg"></p>
+
+    <?php if (isset($_COOKIE['boda_confirmada'])): ?>
+
+        <div class="thanks-message">
+            <h3>¡Gracias!</h3>
+            <p>Ya registramos tu confirmación.</p>
+        </div>
+
+    <?php else: ?>
+
+        <form id="rsvpForm" action="guardar.php" method="POST">
+
+            <input
+                type="text"
+                name="nombre"
+                placeholder="Nombre completo"
+                required
+            >
+
+            <select name="asistencia" required>
+                <option value="" disabled selected>¿Asistirás?</option>
+                <option value="si">Sí, ahí estaré</option>
+                <option value="no">No podré asistir</option>
+            </select>
+
+            <button type="submit">
+                Confirmar asistencia
+            </button>
+
+        </form>
+
+    <?php endif; ?>
+
   </div>
+
 </section>
 
 <footer>
@@ -731,11 +804,14 @@
   });
 
   // RSVP form (demo — replace with a real endpoint, e.g. Google Forms, Formspree, etc.)
-  document.getElementById('rsvpForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('rsvp-msg').textContent = '¡Gracias! Tu confirmación fue registrada.';
-    this.reset();
-  });
+ document.getElementById('rsvpForm').addEventListener('submit', function () {
+
+    const button = this.querySelector('button[type="submit"]');
+
+    button.disabled = true;
+    button.textContent = 'Enviando...';
+
+});
 </script>
 
 </body>
